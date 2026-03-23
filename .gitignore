@@ -2,3 +2,15 @@
 _build
 .lia.cache
 .nia.cache
+# Nix result
+result
+# Rocq compilation files
+*.vo
+*.vos
+*.vok
+*.glob
+*.aux
+# Rocq generated makefiles
+*.Makefile.coq.d
+Makefile.coq.conf
+Makefile.coq

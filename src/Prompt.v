@@ -65,9 +65,9 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Import Values Instances String Prompt_monad.
-From Coq Require Export ZArith.Zwf.
-From Coq Require Import Lia List.
+Require Import Sail.Values Sail.Instances Sail.String Sail.Prompt_monad.
+From Stdlib Require Export ZArith.Zwf.
+From Stdlib Require Import Lia List.
 Import ListNotations.
 Local Open Scope Z.
 
@@ -271,9 +271,9 @@ Definition internal_pick {a} (xs : list a) : monad a E :=
 
 End Choose.
 
-(* The normal print routines do nothing in Coq so that they don't drag terms and functions into the
-   monad.  Here are alternative versions which do, which can be controlled by defining PRINT_EFFECTS
-   in Sail. *)
+(* The normal print routines do nothing in Rocq so that they don't drag terms and functions into
+   the monad.  Here are alternative versions which do, which can be controlled by defining
+   PRINT_EFFECTS in Sail. *)
 Definition print_effect {E} (s : string) : monad unit E :=
   Print s (Done tt).
 

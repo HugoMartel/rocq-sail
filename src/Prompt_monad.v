@@ -65,8 +65,8 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-From Coq Require Import String.
-Require Import Instr_kinds Values Instances.
+From Stdlib Require Import String.
+Require Import Sail.Instr_kinds Sail.Values Sail.Instances.
 Import ListNotations.
 Local Open Scope Z.
 

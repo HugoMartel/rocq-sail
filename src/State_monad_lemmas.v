@@ -65,9 +65,9 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Import State_monad.
-From Coq Require Export Setoid.
-From Coq Require Export Morphisms Equivalence.
+Require Import Sail.State_monad.
+From Stdlib Require Export Setoid.
+From Stdlib Require Export Morphisms Equivalence.
 
 (* Basic results for reasoning about definitions which use the state monad.
 

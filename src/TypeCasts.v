@@ -1,5 +1,5 @@
-From Coq Require Import ZArith Eqdep_dec.
-Require Export Inhabited.
+From Stdlib Require Import ZArith Eqdep_dec.
+Require Export Sail.Inhabited.
 
 Module Z_eq_dec.
 Definition U := Z.

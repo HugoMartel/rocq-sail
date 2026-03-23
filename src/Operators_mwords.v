@@ -65,8 +65,9 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Import TypeCasts Values Instances Prompt_monad Prompt MachineWord.
-From Coq Require Import ZArith Lia Eqdep_dec.
+Require Import Sail.TypeCasts Sail.Values Sail.Instances Sail.Prompt_monad
+               Sail.Prompt Sail.MachineWord.
+From Stdlib Require Import ZArith Lia Eqdep_dec.
 Local Open Scope Z.
 
 Definition autocast_m {rv rt e m n} {T : Z -> Type} `{H : Inhabited (T n)} (x : @monad rv rt (T m) e) : @monad rv rt (T n) e :=

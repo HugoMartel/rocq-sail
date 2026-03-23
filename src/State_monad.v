@@ -65,13 +65,13 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Import Instr_kinds Values.
-From Coq Require FMapAVL OrderedType OrderedTypeEx.
-From Coq Require Import List.
-From Coq Require Import Rbase.  (* TODO would like to avoid this in models without reals *)
+Require Import Sail.Instr_kinds Sail.Values.
+From Stdlib Require FMapAVL OrderedType OrderedTypeEx.
+From Stdlib Require Import List.
+From Stdlib Require Import Rbase.  (* TODO would like to avoid this in models without reals *)
 Import ListNotations.
 Local Open Scope Z.
-From Coq Require OrderedTypeEx.
+From Stdlib Require OrderedTypeEx.
 
 Module NMap := FMapAVL.Make(OrderedTypeEx.N_as_OT).
 

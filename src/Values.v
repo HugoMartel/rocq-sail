@@ -68,14 +68,14 @@
 (* Version of sail_values.lem that uses Lems machine words library *)
 
 (*Require Import Sail_impl_base*)
-From Coq Require Export ZArith String List Sumbool Zeuclid.
-From Coq Require Import Ascii Eqdep_dec Lia.
-From Coq Require BinaryString HexString.
+From Stdlib Require Export ZArith String List Sumbool Zeuclid.
+From Stdlib Require Import Ascii Eqdep_dec Lia.
+From Stdlib Require BinaryString HexString.
 Import ListNotations.
-From Coq Require Import Rbase.  (* TODO would like to avoid this in models without reals *)
-From Coq Require Eqdep EqdepFacts Zquot.
+From Stdlib Require Import Rbase.  (* TODO would like to avoid this in models without reals *)
+From Stdlib Require Eqdep EqdepFacts Zquot.
 
-Require Import TypeCasts MachineWord.
+Require Import Sail.TypeCasts Sail.MachineWord.
 
 Local Open Scope Z.
 Local Open Scope bool.

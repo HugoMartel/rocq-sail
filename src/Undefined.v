@@ -65,8 +65,8 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Import TypeCasts Prompt_monad Prompt Values.
-From Coq Require Import String ZArith.
+Require Import Sail.TypeCasts Sail.Prompt_monad Sail.Prompt Sail.Values.
+From Stdlib Require Import String ZArith.
 Local Open Scope Z.
 
 Section Undef.

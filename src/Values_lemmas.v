@@ -65,8 +65,8 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Import Values.
-From Coq Require Program Program.Wf.
+Require Import Sail.Values.
+From Stdlib Require Program Program.Wf.
 
 (*
 

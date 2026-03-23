@@ -65,8 +65,9 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-From Coq Require Import String ZArith Setoid Morphisms Equivalence Lia.
-Require Import Values State_monad Prompt State State_monad_lemmas State_lemmas.
+From Stdlib Require Import String ZArith Setoid Morphisms Equivalence Lia.
+Require Import Sail.Values Sail.State_monad Sail.Prompt Sail.State
+               Sail.State_monad_lemmas Sail.State_lemmas.
 
 (*adhoc_overloading
   Monad_Syntax.bind State_monad.bindS*)
@@ -1071,7 +1072,7 @@ Ltac PrePostE_step :=
   | |- PrePostE _ (bindS _ (fun _ => ?f)) _ _ => eapply PrePostE_bindS_ignore
   | |- PrePostE _ (bindS _ _) _ _ => eapply PrePostE_bindS; intros
   | |- PrePostE _ (seqS _ _) _ _ => eapply PrePostE_seqS; intros
-  (* The precondition will often have the form (?R x), and Coq's higher-order
+  (* The precondition will often have the form (?R x), and Rocq's higher-order
      unification will try to unify x and a if we don't explicitly tell it to
      use Q to form the precondition to unify with P. *)
   | |- PrePostE _ (returnS ?a) ?ppeQ _ => apply PrePostE_returnS with (Q := ppeQ)
@@ -1127,7 +1128,7 @@ Ltac PrePostE_step :=
        not good enough, consider using a separate hintdb)
 
      * use auto rather than eauto - when eauto is applied to a goal
-       with an evar Coq falls back to trying all of the specs rather
+       with an evar Rocq falls back to trying all of the specs rather
        than picking out one which matches (at least, with 8.9).
    *)
   | |- PrePostE ?pre _ _ _ =>
