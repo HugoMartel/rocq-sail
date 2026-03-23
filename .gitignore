@@ -15,3 +15,4 @@ result
 Makefile.coq.conf
 Makefile.coq
 .filestoinstall
+_RocqProject

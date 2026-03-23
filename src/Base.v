@@ -65,6 +65,5 @@
 (*  SUCH DAMAGE.                                                            *)
 (*==========================================================================*)
 
-Require Export Sail.TypeCasts Sail.Instr_kinds Sail.Values Sail.Instances
-               Sail.String Sail.Operators_mwords Sail.Prompt_monad Sail.Prompt
-               Sail.State Sail.Undefined.
+From Sail Require Export TypeCasts Instr_kinds Values Instances String
+                         Operators_mwords Prompt_monad Prompt State Undefined.

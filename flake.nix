@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A flake to be able to tinker with Rocq-Sail";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -21,15 +21,9 @@
         rocqPackages = pkgs.rocqPackages;
       in
       {
-        default = pkgs.mkShell {
-          packages = [
-            rocqPackages.rocq-core
-            rocqPackages.stdlib
-            rocqPackages.stdpp
-            (rocqPackages.callPackage ./nix/coq-bbv.nix {})
-            pkgs.dune
-          ];
-        };
+        default = rocqPackages.callPackage ./nix/dev-shell.nix {};
+
+        proof-general = rocqPackages.callPackage ./nix/dev-shell.nix { withEmacs = true; };
       }
     );
 

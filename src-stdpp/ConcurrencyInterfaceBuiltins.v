@@ -1,4 +1,4 @@
-Require Import Real Base ConcurrencyInterfaceTypes ConcurrencyInterface.
+From Sail Require Import Real Base ConcurrencyInterfaceTypes ConcurrencyInterface.
 From stdpp Require Import bitvector.definitions.
 
 Import ListNotations.
@@ -456,9 +456,9 @@ Definition sail_translation_start {e} (ts : A.trans_start) : monad e unit := I.N
 Definition sail_translation_end {e} (te : A.trans_end) : monad e unit := I.Next (I.TranslationEnd te) I.Ret.
 
 (* ----------- *)
-(* The normal print routines do nothing in Coq so that they don't drag terms and functions into the
-   monad.  Here are alternative versions which do, which can be controlled by defining PRINT_EFFECTS
-   in Sail. *)
+(* The normal print routines do nothing in Rocq so that they don't drag terms and functions into
+   the monad.  Here are alternative versions which do, which can be controlled by defining
+   PRINT_EFFECTS in Sail. *)
 Definition print_effect {e} (s : string) : monad e unit :=
   I.Next (I.Message s) I.Ret.
 

@@ -2,7 +2,7 @@
 
    These are the types found in sail/lib/concurrency_interface/read_write_v2.sail.
 *)
-Require Import Real Base.
+From Sail Require Import Real Base.
 From stdpp Require Import base countable.
 Import ListNotations.
 Open Scope string.
