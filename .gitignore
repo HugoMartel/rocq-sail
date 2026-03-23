@@ -14,3 +14,4 @@ result
 *.Makefile.coq.d
 Makefile.coq.conf
 Makefile.coq
+.filestoinstall

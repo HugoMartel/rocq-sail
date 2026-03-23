@@ -19,16 +19,6 @@
         pkgs = import nixpkgs { inherit system; };
 
         rocqPackages = pkgs.rocqPackages;
-        # rocq-env = pkgs.coqPackages.coq.withPackages (
-        # # rocq-env = pkgs.rocqPackages.rocq-core.withPackages (
-        # # rocq-env = pkgs.rocqPackages.coq.withPackages (
-        #   ps: with ps; [
-        #     stdlib
-        #     stdpp
-
-        #     coq.ocamlPackages.ocaml
-        #   ]
-        # );
       in
       {
         default = pkgs.mkShell {
@@ -51,6 +41,8 @@
       rec {
         rocq-sail = pkgs.rocqPackages.callPackage ./package.nix {};
         # rocq-sail = pkgs.callPackage ./package.nix {};
+
+        rocq-sail-stdpp = pkgs.rocqPackages.callPackage ./package.nix { with-stpp = true; };
 
         default = rocq-sail;
       }
